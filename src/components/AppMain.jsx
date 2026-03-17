@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const languages = [
   {
     id: 1,
@@ -33,13 +35,30 @@ const languages = [
 
 export default function AppMain() {
 
+    const [activeButton,setActiveButton] = useState(0)
+
     return(
         <>
-        {
-        languages.map(language => (
-            <button className="btn btn-primary">{language.title}</button>
-        ))
-        }
+        <div className="d-flex justify-content-center row mt-5">
+            {
+            languages.map((language,id) => (
+                <button className="col btn btn-primary m-5" 
+                        onClick={()=>setActiveButton(id)}
+                        key={id}>
+                            {language.title}
+                </button>
+            ))
+            }
+            <div className="row card mt-5">
+                <h3>
+                    {languages[activeButton].title}<br/>
+                </h3>
+                <p>
+                    {languages[activeButton].description}
+                </p>
+            </div>
+
+        </div>
         </>
     )
 }
