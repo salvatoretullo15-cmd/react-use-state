@@ -1,7 +1,7 @@
 export default function AppHeader() {
     return(
         <>
-        <h1>LEARN WEB DEVELOPMENT</h1>
+        <h1 className="text-bg-light">LEARN WEB DEVELOPMENT</h1>
         </>
     )
 }

@@ -38,8 +38,8 @@ export default function AppMain() {
     const [activeButton,setActiveButton] = useState(0)
 
     return(
-        <>
-        <div className="d-flex justify-content-center row mt-5">
+        <main className="container">
+        <div className="d-flex row">
             {
             languages.map((language,id) => (
                 <button className="col btn btn-primary m-5" 
@@ -49,16 +49,17 @@ export default function AppMain() {
                 </button>
             ))
             }
-            <div className="row card mt-5">
-                <h3>
-                    {languages[activeButton].title}<br/>
-                </h3>
-                <p>
-                    {languages[activeButton].description}
-                </p>
+            <div className="card mb-3">
+                <div className="card-header">
+                    <strong>{languages[activeButton].title}</strong>
+                </div>
+                <div className="card-body">
+                    <p className="card-text">
+                        {languages[activeButton].description}
+                    </p>
+                </div>
             </div>
-
         </div>
-        </>
+        </main>
     )
 }
